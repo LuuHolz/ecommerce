@@ -1,10 +1,11 @@
 import { useEffect } from 'react';
 import useProducts from '../hooks/useProducts'
 import Card from '../components/Card.tsx';
+import Pagination from '../components/Pagination.tsx'
 
 
 const Home = () => {
- const {isLoading, products,error, getProducts} = useProducts();
+ const {isLoading, products, error, getProducts} = useProducts();
 
   useEffect(() => {
      getProducts()
@@ -18,6 +19,8 @@ const Home = () => {
           <Card key={index} product={product} isLoading={isLoading}/>
         ))
       }
+
+      <Pagination/>
       
     </div>
   )
