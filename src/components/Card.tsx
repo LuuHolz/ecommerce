@@ -1,6 +1,6 @@
-import React from 'react'
+import { DataAPI } from "../types/productsAPI.type"
 
-const Card = ({product, isLoading}) => {
+const Card = ({product, isLoading} : {product: DataAPI, isLoading: boolean}) => {
 
 
   return (
