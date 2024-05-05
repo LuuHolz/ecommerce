@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import useProducts from '../hooks/useProducts'
+import Card from '../components/Card.tsx';
 
 
 const Home = () => {
@@ -11,8 +12,13 @@ const Home = () => {
 
 
   return (
-    <div>
-      <p>hola</p>
+    <div className='containerHome'>
+      {
+        products.length > 0 && products.map((product, index) => (
+          <Card key={index} product={product} isLoading={isLoading}/>
+        ))
+      }
+      
     </div>
   )
 }
